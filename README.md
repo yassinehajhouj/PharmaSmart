@@ -1,10 +1,10 @@
-# 💊 PharmaSmart – Plateforme intelligente de pharmacies au Maroc
+# PharmaSmart – Plateforme intelligente de pharmacies au Maroc
 
 > Trouvez rapidement vos médicaments dans les pharmacies marocaines grâce à la géolocalisation, le stock en temps réel et l'IA.
 
 ---
 
-## 🚀 Stack Technique
+## Stack Technique
 
 | Couche | Technologie |
 |--------|------------|
@@ -20,30 +20,30 @@
 
 ---
 
-## ✅ Fonctionnalités
+## Fonctionnalités
 
-### 👤 Utilisateurs
-- 🔍 Recherche de médicaments par nom + ville + géolocalisation GPS
-- 📍 Classement pharmacies par distance (km)
-- 📄 Fiche détaillée : prix, stock, pharmacie, localisation
-- 💊 Gestion ordonnances (commande en ligne désactivée si ordonnance requise)
-- 🛒 Commandes en ligne pour médicaments sans ordonnance
-- 🤖 Assistant IA : explication, comparaison, chat intelligent
+### Utilisateurs
+- Recherche de médicaments par nom + ville + géolocalisation GPS
+- Classement pharmacies par distance (km)
+- Fiche détaillée : prix, stock, pharmacie, localisation
+- Gestion ordonnances (commande en ligne désactivée si ordonnance requise)
+- Commandes en ligne pour médicaments sans ordonnance
+- Assistant IA : explication, comparaison, chat intelligent
 
-### 🏥 Pharmaciens
-- 📦 Gestion stock en temps réel (ajout, modification, mise à jour)
-- 📋 Traitement des commandes (confirmation, préparation, livraison)
-- 🤖 Analyse IA : alertes rupture, prédictions, recommandations
-- 🔐 Espace sécurisé (activation requise par l'admin)
+### Pharmaciens
+- Gestion stock en temps réel (ajout, modification, mise à jour)
+- Traitement des commandes (confirmation, préparation, livraison)
+- Analyse IA : alertes rupture, prédictions, recommandations
+- Espace sécurisé (activation requise par l'admin)
 
-### ⚙️ Administrateurs
-- ✅ Validation des comptes pharmaciens
-- 👥 Gestion des utilisateurs
-- 📊 Supervision globale de la plateforme
+### Administrateurs
+- Validation des comptes pharmaciens
+- Gestion des utilisateurs
+- Supervision globale de la plateforme
 
 ---
 
-## 🐳 Installation avec Docker (Recommandé)
+## Installation avec Docker (Recommandé)
 
 ```bash
 # 1. Cloner le projet
@@ -68,7 +68,7 @@ docker-compose exec backend python manage.py createsuperuser
 
 ---
 
-## 🛠️ Installation manuelle
+## Installation manuelle
 
 ### Backend (Django)
 
@@ -114,23 +114,23 @@ npm start
 
 ---
 
-## ⚙️ Variables d'environnement
+## Variables d'environnement
 
-Copiez `backend/.env.example` → `backend/.env` et renseignez :
+Copiez `backend/.env.example` vers `backend/.env` et renseignez :
 
 | Variable | Description | Requis |
 |----------|-------------|--------|
-| `SECRET_KEY` | Clé secrète Django | ✅ |
-| `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` | Connexion PostgreSQL | ✅ |
-| `ANTHROPIC_API_KEY` | Clé Claude AI (https://console.anthropic.com) | ✅ pour IA |
-| `GOOGLE_MAPS_API_KEY` | Google Maps | ⚠️ optionnel |
-| `GOOGLE_OAUTH2_KEY`, `GOOGLE_OAUTH2_SECRET` | Google OAuth | ⚠️ optionnel |
-| `REDIS_URL` | URL Redis | ✅ |
-| `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` | SMTP email | ⚠️ optionnel |
+| `SECRET_KEY` | Clé secrète Django | Oui |
+| `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` | Connexion PostgreSQL | Oui |
+| `ANTHROPIC_API_KEY` | Clé Claude AI | Oui (pour IA) |
+| `GOOGLE_MAPS_API_KEY` | Google Maps | Optionnel |
+| `GOOGLE_OAUTH2_KEY`, `GOOGLE_OAUTH2_SECRET` | Google OAuth | Optionnel |
+| `REDIS_URL` | URL Redis | Oui |
+| `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` | SMTP email | Optionnel |
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 pharmasmart/
@@ -172,14 +172,14 @@ pharmasmart/
 
 ---
 
-## 📝 Licence
+## Licence
 
 Projet réalisé dans le cadre du cahier des charges PharmaSmart.
 © 2024 PharmaSmart – Tous droits réservés.
 
 ---
 
-## ⚕️ Avertissement médical
+## Avertissement médical
 
 PharmaSmart est une plateforme d'information et de mise en relation.
 **Consultez toujours un médecin ou pharmacien avant de prendre tout médicament.**
