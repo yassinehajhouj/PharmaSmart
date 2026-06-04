@@ -1,0 +1,451 @@
+/* ============================================================
+   PharmaSmart — Global Styles & Animations
+   ============================================================ */
+
+/* ===== BASE ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== HERO BACKGROUND (responsive) ===== */
+.hero-section {
+  position: relative;
+  color: white;
+  padding: 80px 0;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  filter: brightness(0.4);
+  z-index: 0;
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding: 50px 0;
+  }
+  .hero-bg-image {
+    background-position: center center;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+  .hero-bg-image {
+    background-position: center 30%;
+  }
+}
+
+/* ============================================================
+   PAGE TRANSITIONS
+   ============================================================ */
+.page-transition {
+  width: 100%;
+  will-change: opacity, transform;
+}
+
+.page-transition--enter {
+  animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-transition--exit {
+  animation: pageExit 0.22s ease-in both;
+  pointer-events: none;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+}
+
+/* ============================================================
+   CARDS — hover lift
+   ============================================================ */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ============================================================
+   BUTTONS — smooth press + glow
+   ============================================================ */
+.btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease !important;
+}
+
+.btn:active {
+  transform: scale(0.96) !important;
+}
+
+.btn-success, .btn-primary {
+  box-shadow: 0 4px 14px rgba(11, 110, 79, 0.3);
+}
+
+.btn-success:hover, .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(11, 110, 79, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ============================================================
+   NAVBAR — smooth link underline
+   ============================================================ */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ============================================================
+   BADGE
+   ============================================================ */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+thead th {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6c757d;
+}
+
+tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0B6E4F, #1B4965);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B6E4F;
+}
+
+/* ============================================================
+   CHATBOT TYPING DOTS
+   ============================================================ */
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ============================================================
+   SKELETON / SHIMMER (loading states)
+   ============================================================ */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   FADE IN UTILITY (for sections revealed on scroll)
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Staggered children */
+.animate-fade-up:nth-child(1) { animation-delay: 0.05s; }
+.animate-fade-up:nth-child(2) { animation-delay: 0.12s; }
+.animate-fade-up:nth-child(3) { animation-delay: 0.19s; }
+.animate-fade-up:nth-child(4) { animation-delay: 0.26s; }
+.animate-fade-up:nth-child(5) { animation-delay: 0.33s; }
+.animate-fade-up:nth-child(6) { animation-delay: 0.40s; }
+.animate-fade-up:nth-child(7) { animation-delay: 0.47s; }
+.animate-fade-up:nth-child(8) { animation-delay: 0.54s; }
+
+/* ============================================================
+   FORM INPUTS — focus ring
+   ============================================================ */
+.form-control:focus,
+.form-select:focus {
+  border-color: #0B6E4F;
+  box-shadow: 0 0 0 3px rgba(11, 110, 79, 0.18);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* ============================================================
+   MODAL — slide up entrance
+   ============================================================ */
+.modal.show .modal-dialog {
+  animation: modalSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ============================================================
+   STAT CARDS — number counter animation helper
+   ============================================================ */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+  animation: countUp 0.6s ease both;
+}
+
+/* ============================================================
+   ALERT — slide in from top
+   ============================================================ */
+@keyframes alertSlideIn {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.alert {
+  animation: alertSlideIn 0.3s ease both;
+}
+
+/* ============================================================
+   PROGRESS BAR ANIMATION
+   ============================================================ */
+.progress-bar {
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* ============================================================
+   DROPDOWN — fade + scale
+   ============================================================ */
+.dropdown-menu.show {
+  animation: dropdownIn 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: scaleY(0.9) translateY(-6px); }
+  to   { opacity: 1; transform: scaleY(1) translateY(0); }
+}
+
+/* ============================================================
+   TOOLTIPS & HOVER HINTS
+   ============================================================ */
+[title]:hover::before {
+  transition: opacity 0.2s ease;
+}
+
+/* ============================================================
+   GLASSMORPHISM CARD
+   ============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+}
+
+/* ============================================================
+   FLOATING ANIMATION (for hero illustrations)
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ============================================================
+   PULSE GLOW (for danger alerts / badges)
+   ============================================================ */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(231, 76, 60, 0); }
+}
+
+.pulse-danger {
+  animation: pulseGlow 2s infinite;
+}
+
+/* ============================================================
+   MEDICINE THUMBNAIL — hover effect
+   ============================================================ */
+.medicine-thumb {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.medicine-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ============================================================
+   SPLIT CARD — hover/tap reveals icon + image side by side
+   ============================================================ */
+.split-card-wrapper .split-card-image {
+  opacity: 1;
+}
+.split-card-wrapper:hover .split-card-icon-panel {
+  transform: translateX(0) !important;
+}
+.split-card-wrapper:hover .split-card-photo-panel {
+  width: 50% !important;
+  left: auto;
+  right: 0;
+}
+.split-card-wrapper:hover .split-card-image {
+  opacity: 0;
+}
+.split-card-wrapper:hover .split-card-overlay {
+  opacity: 0;
+}
+
+/* Navbar logo */
+.navbar-logo {
+  height: 45px;
+  width: auto;
+  margin-right: 8px;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Image upload zone */
+.image-upload-zone {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+.image-upload-zone:hover {
+  border-color: #0B6E4F;
+  background: #e8f5e9;
+}
+.image-upload-zone.has-image {
+  border-color: #0B6E4F;
+  border-style: solid;
+  padding: 8px;
+}
+
+/* ============================================================
+   GRADIENT TEXT (for section headings)
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #0B6E4F, #1B4965);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   LINE CLAMP (text truncation)
+   ============================================================ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   NAVBAR — scroll glassmorphism
+   ============================================================ */
+.navbar-scrolled {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  background-color: rgba(11, 110, 79, 0.92) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ============================================================
+   CARD TOP ACCENT BORDERS
+   ============================================================ */
+.card-accent-green  { border-top: 3px solid #0B6E4F !important; }
+.card-accent-orange { border-top: 3px solid #F39C12 !important; }
+.card-accent-red    { border-top: 3px solid #E74C3C !important; }
+.card-accent-blue   { border-top: 3px solid #1B4965 !important; }
+
+/* Left border accents */
+.card-left-green  { border-left: 3px solid #0B6E4F !important; }
+.card-left-orange { border-left: 3px solid #F39C12 !important; }
+.card-left-red    { border-left: 3px solid #E74C3C !important; }
+.card-left-blue   { border-left: 3px solid #1B4965 !important; }
+.card-left-gray   { border-left: 3px solid #6c757d !important; }

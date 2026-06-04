@@ -1,0 +1,69 @@
+# ── Python / Django ───────────────────────────────────────────────────────────
+PharmaSmart-backend/venv/
+PharmaSmart-backend/__pycache__/
+PharmaSmart-backend/**/__pycache__/
+PharmaSmart-backend/**/*.pyc
+PharmaSmart-backend/*.pyc
+PharmaSmart-backend/*.pyo
+
+# Secrets & config locaux
+PharmaSmart-backend/.env
+PharmaSmart-backend/.env.*
+
+# Base de données locale
+PharmaSmart-backend/db.sqlite3
+
+# Fichiers Django générés
+PharmaSmart-backend/staticfiles/
+PharmaSmart-backend/media/
+
+# Modèles ML entraînés (gros fichiers binaires)
+PharmaSmart-backend/ml_module/saved_models/
+PharmaSmart-backend/**/*.joblib
+PharmaSmart-backend/**/*.pkl
+PharmaSmart-backend/**/*.h5
+
+# Node dans backend (si présent)
+PharmaSmart-backend/node_modules/
+
+# ── Node / React ──────────────────────────────────────────────────────────────
+PharmaSmart-frontend/node_modules/
+PharmaSmart-frontend/build/
+PharmaSmart-frontend/dist/
+PharmaSmart-frontend/dist-check/
+PharmaSmart-frontend/.env
+PharmaSmart-frontend/.env.*
+PharmaSmart-frontend/.env.local
+PharmaSmart-frontend/.env.production
+
+# ── IDE & éditeurs ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+# docker-compose.override.yml  ← décommentez si vous avez des overrides locaux
+
+# ── Fichiers de formation / données personnelles ──────────────────────────────
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+*.zip
+*.rar
+*.7z
