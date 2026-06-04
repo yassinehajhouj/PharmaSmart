@@ -175,7 +175,7 @@ pharmasmart/
 ## Licence
 
 Projet réalisé dans le cadre du cahier des charges PharmaSmart.
-© 2024 PharmaSmart – Tous droits réservés.
+© 2026 PharmaSmart – Tous droits réservés.
 
 ---
 
